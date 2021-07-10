@@ -1,0 +1,41 @@
+# Cognizant
+Important Hands On and Projects
+function validateObject(employee)
+{
+if(employee instanceof Employee){
+    var finalOutput=employee.name+" is serving the position of "+employee.designation+" since ";
+
+var experience= employee.year_of_experience;
+var presentYear=new Date().getFullYear()-1;
+var joinedYear=presentYear-experience;
+finalOutput+=joinedYear;
+
+return finalOutput;
+}
+return false;
+}
+
+
+//------------------CLASS-------------------//
+class Employee 
+{
+constructor(name, designation, year_of_experience){
+    this.name=name;
+    this.designation=designation;
+    this.year_of_experience=year_of_experience;
+}
+}
+
+
+function createEmployee(name, designation, year_of_experience)
+{
+var Emp = new Employee(name, designation, year_of_experience);
+return Emp;
+}
+
+
+function displayEmployee(name,role,years){
+    // var name1,role1,years1;
+   var EmpObj= createEmployee(name,role,years);
+   return validateObject(EmpObj);
+}
